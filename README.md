@@ -29,5 +29,5 @@ function(user_input) {
 
 ### Run The Program
 1. install rust
-2. clone the git repo
-3. `cargo run`
+2. cargo install hailstone_numbers
+3. `hailstone_numbers`
