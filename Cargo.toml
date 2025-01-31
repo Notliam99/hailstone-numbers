@@ -2,9 +2,9 @@
 name = "hailstone-numbers"
 version = "0.1.0"
 edition = "2024"
-
-# [[bin]]
-# name = "hailstone-numbers"
-# path = "./src/main.rs"
+readme = "./README.md"
+licence = "./LICENSE"
+repo = "https://github.com/Notliam99/hailstone-numbers.git"
+description = "calculate hailstone numbers"
 
 [dependencies]

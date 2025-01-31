@@ -3,8 +3,8 @@ use std::io::{self, BufRead, Write};
 /// generate the hailstone sequince for a number
 ///
 ///     Vec<64> in function params is just for ease of recuresion
-fn hailstone(hailstone_numbers: Vec<u64>, n: u64) -> Vec<u64> {
-    let mut hailstone_numbers: Vec<u64> = hailstone_numbers;
+fn hailstone(hailstone_numbers: &Vec<u64>, n: u64) -> Vec<u64> {
+    let mut hailstone_numbers: Vec<u64> = hailstone_numbers.to_vec();
 
     // adding the first number to the vector
     if hailstone_numbers.len() == 0 {
@@ -24,9 +24,11 @@ fn hailstone(hailstone_numbers: Vec<u64>, n: u64) -> Vec<u64> {
     }
 
     // check if its 1 other wise enter recuresion and handle errors
-    match hailstone_numbers.last() {
+    match &hailstone_numbers.last() {
         Some(1) => return hailstone_numbers,
-        Some(n) => return hailstone(hailstone_numbers.clone(), *n),
+        Some(n) => {
+            return hailstone(&hailstone_numbers, **n);
+        }
         None => panic!("failed to append the hailstone number to the vector."),
     }
 }
@@ -51,7 +53,7 @@ fn main() {
         ),
     };
 
-    let hailstone_numbers: Vec<u64> = hailstone(Vec::new(), n);
+    let hailstone_numbers: Vec<u64> = hailstone(&Vec::new(), n);
 
     println!("{hailstone_numbers:?}")
 }
