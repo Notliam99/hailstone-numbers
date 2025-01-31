@@ -3,7 +3,7 @@ name = "hailstone-numbers"
 version = "0.1.0"
 edition = "2024"
 readme = "./README.md"
-license = "./LICENSE"
+license-file = "./LICENSE"
 repo = "https://github.com/Notliam99/hailstone-numbers.git"
 description = "calculate hailstone numbers"
 
